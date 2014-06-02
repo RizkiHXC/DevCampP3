@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6A3F6E07-516B-4840-894B-5BAE31330542</string>
+	<key>IDESourceControlProjectName</key>
+	<string>iBeacons Demo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>87593407-FCB1-4E1B-9788-5DF7F155162A</key>
+		<string>https://github.com/RizkiHXC/P2MI.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iBeacons Demo.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>87593407-FCB1-4E1B-9788-5DF7F155162A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/RizkiHXC/P2MI.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>87593407-FCB1-4E1B-9788-5DF7F155162A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>87593407-FCB1-4E1B-9788-5DF7F155162A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>P2MI</string>
+		</dict>
+	</array>
+</dict>
+</plist>
