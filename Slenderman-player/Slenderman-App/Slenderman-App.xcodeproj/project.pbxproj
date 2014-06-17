@@ -1,0 +1,479 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1562CAF19473A510015D689 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1562CAE19473A510015D689 /* Foundation.framework */; };
+		A1562CB119473A510015D689 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1562CB019473A510015D689 /* CoreGraphics.framework */; };
+		A1562CB319473A510015D689 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1562CB219473A510015D689 /* UIKit.framework */; };
+		A1562CB919473A510015D689 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1562CB719473A510015D689 /* InfoPlist.strings */; };
+		A1562CBB19473A510015D689 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1562CBA19473A510015D689 /* main.m */; };
+		A1562CBF19473A510015D689 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1562CBE19473A510015D689 /* AppDelegate.m */; };
+		A1562CC219473A520015D689 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1562CC019473A520015D689 /* Main.storyboard */; };
+		A1562CC519473A520015D689 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1562CC419473A520015D689 /* ViewController.m */; };
+		A1562CC719473A520015D689 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1562CC619473A520015D689 /* Images.xcassets */; };
+		A1562CCE19473A520015D689 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1562CCD19473A520015D689 /* XCTest.framework */; };
+		A1562CCF19473A520015D689 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1562CAE19473A510015D689 /* Foundation.framework */; };
+		A1562CD019473A520015D689 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1562CB219473A510015D689 /* UIKit.framework */; };
+		A1562CD819473A520015D689 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1562CD619473A520015D689 /* InfoPlist.strings */; };
+		A1562CDA19473A520015D689 /* Slenderman_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A1562CD919473A520015D689 /* Slenderman_AppTests.m */; };
+		A1562CE419473C040015D689 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1562CE319473C040015D689 /* AVFoundation.framework */; };
+		A1562CE619473C0B0015D689 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1562CE519473C0B0015D689 /* CoreLocation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A1562CD119473A520015D689 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1562CA319473A510015D689 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1562CAA19473A510015D689;
+			remoteInfo = "Slenderman-App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A1562CAB19473A510015D689 /* Slenderman-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slenderman-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1562CAE19473A510015D689 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A1562CB019473A510015D689 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A1562CB219473A510015D689 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A1562CB619473A510015D689 /* Slenderman-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Slenderman-App-Info.plist"; sourceTree = "<group>"; };
+		A1562CB819473A510015D689 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A1562CBA19473A510015D689 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A1562CBC19473A510015D689 /* Slenderman-App-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Slenderman-App-Prefix.pch"; sourceTree = "<group>"; };
+		A1562CBD19473A510015D689 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A1562CBE19473A510015D689 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A1562CC119473A520015D689 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A1562CC319473A520015D689 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A1562CC419473A520015D689 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A1562CC619473A520015D689 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A1562CCC19473A520015D689 /* Slenderman-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Slenderman-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1562CCD19473A520015D689 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A1562CD519473A520015D689 /* Slenderman-AppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Slenderman-AppTests-Info.plist"; sourceTree = "<group>"; };
+		A1562CD719473A520015D689 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A1562CD919473A520015D689 /* Slenderman_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Slenderman_AppTests.m; sourceTree = "<group>"; };
+		A1562CE319473C040015D689 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A1562CE519473C0B0015D689 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1562CA819473A510015D689 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1562CE619473C0B0015D689 /* CoreLocation.framework in Frameworks */,
+				A1562CE419473C040015D689 /* AVFoundation.framework in Frameworks */,
+				A1562CB119473A510015D689 /* CoreGraphics.framework in Frameworks */,
+				A1562CB319473A510015D689 /* UIKit.framework in Frameworks */,
+				A1562CAF19473A510015D689 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1562CC919473A520015D689 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1562CCE19473A520015D689 /* XCTest.framework in Frameworks */,
+				A1562CD019473A520015D689 /* UIKit.framework in Frameworks */,
+				A1562CCF19473A520015D689 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1562CA219473A500015D689 = {
+			isa = PBXGroup;
+			children = (
+				A1562CB419473A510015D689 /* Slenderman-App */,
+				A1562CD319473A520015D689 /* Slenderman-AppTests */,
+				A1562CAD19473A510015D689 /* Frameworks */,
+				A1562CAC19473A510015D689 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1562CAC19473A510015D689 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1562CAB19473A510015D689 /* Slenderman-App.app */,
+				A1562CCC19473A520015D689 /* Slenderman-AppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1562CAD19473A510015D689 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1562CE519473C0B0015D689 /* CoreLocation.framework */,
+				A1562CE319473C040015D689 /* AVFoundation.framework */,
+				A1562CAE19473A510015D689 /* Foundation.framework */,
+				A1562CB019473A510015D689 /* CoreGraphics.framework */,
+				A1562CB219473A510015D689 /* UIKit.framework */,
+				A1562CCD19473A520015D689 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1562CB419473A510015D689 /* Slenderman-App */ = {
+			isa = PBXGroup;
+			children = (
+				A1562CBD19473A510015D689 /* AppDelegate.h */,
+				A1562CBE19473A510015D689 /* AppDelegate.m */,
+				A1562CC019473A520015D689 /* Main.storyboard */,
+				A1562CC319473A520015D689 /* ViewController.h */,
+				A1562CC419473A520015D689 /* ViewController.m */,
+				A1562CC619473A520015D689 /* Images.xcassets */,
+				A1562CB519473A510015D689 /* Supporting Files */,
+			);
+			path = "Slenderman-App";
+			sourceTree = "<group>";
+		};
+		A1562CB519473A510015D689 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A1562CB619473A510015D689 /* Slenderman-App-Info.plist */,
+				A1562CB719473A510015D689 /* InfoPlist.strings */,
+				A1562CBA19473A510015D689 /* main.m */,
+				A1562CBC19473A510015D689 /* Slenderman-App-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A1562CD319473A520015D689 /* Slenderman-AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				A1562CD919473A520015D689 /* Slenderman_AppTests.m */,
+				A1562CD419473A520015D689 /* Supporting Files */,
+			);
+			path = "Slenderman-AppTests";
+			sourceTree = "<group>";
+		};
+		A1562CD419473A520015D689 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A1562CD519473A520015D689 /* Slenderman-AppTests-Info.plist */,
+				A1562CD619473A520015D689 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1562CAA19473A510015D689 /* Slenderman-App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1562CDD19473A530015D689 /* Build configuration list for PBXNativeTarget "Slenderman-App" */;
+			buildPhases = (
+				A1562CA719473A510015D689 /* Sources */,
+				A1562CA819473A510015D689 /* Frameworks */,
+				A1562CA919473A510015D689 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Slenderman-App";
+			productName = "Slenderman-App";
+			productReference = A1562CAB19473A510015D689 /* Slenderman-App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A1562CCB19473A520015D689 /* Slenderman-AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1562CE019473A530015D689 /* Build configuration list for PBXNativeTarget "Slenderman-AppTests" */;
+			buildPhases = (
+				A1562CC819473A520015D689 /* Sources */,
+				A1562CC919473A520015D689 /* Frameworks */,
+				A1562CCA19473A520015D689 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1562CD219473A520015D689 /* PBXTargetDependency */,
+			);
+			name = "Slenderman-AppTests";
+			productName = "Slenderman-AppTests";
+			productReference = A1562CCC19473A520015D689 /* Slenderman-AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1562CA319473A510015D689 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Rizki Calame";
+				TargetAttributes = {
+					A1562CCB19473A520015D689 = {
+						TestTargetID = A1562CAA19473A510015D689;
+					};
+				};
+			};
+			buildConfigurationList = A1562CA619473A510015D689 /* Build configuration list for PBXProject "Slenderman-App" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1562CA219473A500015D689;
+			productRefGroup = A1562CAC19473A510015D689 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1562CAA19473A510015D689 /* Slenderman-App */,
+				A1562CCB19473A520015D689 /* Slenderman-AppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1562CA919473A510015D689 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1562CC719473A520015D689 /* Images.xcassets in Resources */,
+				A1562CB919473A510015D689 /* InfoPlist.strings in Resources */,
+				A1562CC219473A520015D689 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1562CCA19473A520015D689 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1562CD819473A520015D689 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1562CA719473A510015D689 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1562CC519473A520015D689 /* ViewController.m in Sources */,
+				A1562CBF19473A510015D689 /* AppDelegate.m in Sources */,
+				A1562CBB19473A510015D689 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1562CC819473A520015D689 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1562CDA19473A520015D689 /* Slenderman_AppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A1562CD219473A520015D689 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1562CAA19473A510015D689 /* Slenderman-App */;
+			targetProxy = A1562CD119473A520015D689 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A1562CB719473A510015D689 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1562CB819473A510015D689 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A1562CC019473A520015D689 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1562CC119473A520015D689 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A1562CD619473A520015D689 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1562CD719473A520015D689 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A1562CDB19473A520015D689 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A1562CDC19473A520015D689 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1562CDE19473A530015D689 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Slenderman-App/Slenderman-App-Prefix.pch";
+				INFOPLIST_FILE = "Slenderman-App/Slenderman-App-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A1562CDF19473A530015D689 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Slenderman-App/Slenderman-App-Prefix.pch";
+				INFOPLIST_FILE = "Slenderman-App/Slenderman-App-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		A1562CE119473A530015D689 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Slenderman-App.app/Slenderman-App";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Slenderman-App/Slenderman-App-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Slenderman-AppTests/Slenderman-AppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A1562CE219473A530015D689 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Slenderman-App.app/Slenderman-App";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Slenderman-App/Slenderman-App-Prefix.pch";
+				INFOPLIST_FILE = "Slenderman-AppTests/Slenderman-AppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1562CA619473A510015D689 /* Build configuration list for PBXProject "Slenderman-App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1562CDB19473A520015D689 /* Debug */,
+				A1562CDC19473A520015D689 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1562CDD19473A530015D689 /* Build configuration list for PBXNativeTarget "Slenderman-App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1562CDE19473A530015D689 /* Debug */,
+				A1562CDF19473A530015D689 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A1562CE019473A530015D689 /* Build configuration list for PBXNativeTarget "Slenderman-AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1562CE119473A530015D689 /* Debug */,
+				A1562CE219473A530015D689 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1562CA319473A510015D689 /* Project object */;
+}
