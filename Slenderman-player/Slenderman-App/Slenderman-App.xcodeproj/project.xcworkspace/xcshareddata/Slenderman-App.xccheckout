@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>76EF2BFF-3F75-4CBF-AB73-4110082B27AB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Slenderman-App</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8BC947A2-1DD6-451D-B5EA-C89913768D18</key>
+		<string>https://github.com/RizkiHXC/DevCampP3.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Slenderman-player/Slenderman-App/Slenderman-App.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8BC947A2-1DD6-451D-B5EA-C89913768D18</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/RizkiHXC/DevCampP3.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8BC947A2-1DD6-451D-B5EA-C89913768D18</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8BC947A2-1DD6-451D-B5EA-C89913768D18</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DevCampP3</string>
+		</dict>
+	</array>
+</dict>
+</plist>
