@@ -21,8 +21,11 @@
     BOOL shouldTimerFire;
     
     AVAudioPlayer *audioPlayer;
+    AVAudioPlayer *audioPlayer2;
     
     NSMutableData *responseData;
+    
+    NSTimer *checkSlender;
 }
 
 @end
@@ -63,6 +66,12 @@
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"zombie" withExtension:@"wav"];
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     [audioPlayer setNumberOfLoops:0];
+    
+    //Audio background
+    NSURL *url2 = [[NSBundle mainBundle] URLForResource:@"background" withExtension:@"wav"];
+    audioPlayer2 = [[AVAudioPlayer alloc] initWithContentsOfURL:url2 error:nil];
+    [audioPlayer2 setNumberOfLoops:0];
+    [audioPlayer2 play];
 
     lastMajor = @"";
     
@@ -75,7 +84,7 @@
     responseData = [NSMutableData data];
     
     
-    NSTimer *checkSlender = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(check) userInfo:nil repeats:YES];
+    checkSlender = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(check) userInfo:nil repeats:YES];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region {
@@ -151,15 +160,50 @@
         NSString *icon = [result objectForKey:@"icon"];
         NSLog(@"icon: %@", icon);
     }
-    */
+     */
     
-    NSLog(@"%@", [[[res objectForKey:@"data"] objectForKey:@"player1"] objectForKey:@"death"]);
+    NSString *warning = [NSString stringWithFormat:@"%@", [[[res objectForKey:@"data"] objectForKey:@"player1"] objectForKey:@"warning"]];
+    if([warning isEqualToString:@"0"]) {
+        self.view.backgroundColor = [UIColor blackColor];
+    } else {
+        self.view.backgroundColor = [UIColor redColor];
+        [self warning];
+    }
+    
+    
+    
+    NSString *death = [NSString stringWithFormat:@"%@", [[[res objectForKey:@"data"] objectForKey:@"player1"] objectForKey:@"death"]];
+    if([death isEqualToString:@"0"]) {
+        self.view.backgroundColor = [UIColor blackColor];
+    } else {
+        self.view.backgroundColor = [UIColor redColor];
+        [self death];
+    }
+}
+
+- (void) warning {
+    [audioPlayer play];
+    
+    [UIView animateWithDuration:10
+                     animations:^{
+                         slenderView.alpha = .9;
+                     }
+                     completion:nil];
+}
+
+- (void) death {
+    slenderView.alpha = 1;
+    deadOverlay.alpha = .9;
+    [deadLabel setAlpha:1];
+    [audioPlayer stop];
+    
+    [checkSlender invalidate];
 }
 
 - (void) startSlender {
-    if (shouldTimerFire) {
-        timerInt++;
-        if (timerInt > 8) {
+//    if (shouldTimerFire) {
+//        timerInt++;
+//        if (timerInt > 8) {
             [audioPlayer play];
             
             [UIView animateWithDuration:10
@@ -167,16 +211,16 @@
                                  slenderView.alpha = .9;
                              }
                              completion:nil];
-        }
-        
-        if (timerInt > 18) {
-            slenderView.alpha = 1;
-            deadOverlay.alpha = .9;
-            [deadLabel setAlpha:1];
-            [audioPlayer stop];
-        }
-        NSLog(@"%i", timerInt);
-    }
+//        }
+//        
+//        if (timerInt > 18) {
+//            slenderView.alpha = 1;
+//            deadOverlay.alpha = .9;
+//            [deadLabel setAlpha:1];
+//            [audioPlayer stop];
+//        }
+//        NSLog(@"%i", timerInt);
+//    }
 }
 
 - (void) resetSlender {

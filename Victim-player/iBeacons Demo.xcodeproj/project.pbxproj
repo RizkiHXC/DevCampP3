@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88B1B9B91951A9C4002026DA /* background.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88B1B9B81951A9C4002026DA /* background.wav */; };
 		A153111818F45CFD008FF539 /* slenderman.png in Resources */ = {isa = PBXBuildFile; fileRef = A153111718F45CFD008FF539 /* slenderman.png */; };
 		A153111A18F45D05008FF539 /* zombie.wav in Resources */ = {isa = PBXBuildFile; fileRef = A153111918F45D05008FF539 /* zombie.wav */; };
 		A153111C18F45D3A008FF539 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A153111B18F45D3A008FF539 /* AVFoundation.framework */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		88B1B9B81951A9C4002026DA /* background.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = background.wav; sourceTree = "<group>"; };
 		A153111718F45CFD008FF539 /* slenderman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slenderman.png; sourceTree = "<group>"; };
 		A153111918F45D05008FF539 /* zombie.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = zombie.wav; sourceTree = "<group>"; };
 		A153111B18F45D3A008FF539 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -151,6 +153,7 @@
 		C9AF590617F5678D00792F91 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				88B1B9B81951A9C4002026DA /* background.wav */,
 				A153111918F45D05008FF539 /* zombie.wav */,
 				A153111718F45CFD008FF539 /* slenderman.png */,
 				C9AF591717F5678D00792F91 /* Images.xcassets */,
@@ -259,6 +262,7 @@
 			files = (
 				A153111A18F45D05008FF539 /* zombie.wav in Resources */,
 				C9AF591817F5678D00792F91 /* Images.xcassets in Resources */,
+				88B1B9B91951A9C4002026DA /* background.wav in Resources */,
 				C9AF590A17F5678D00792F91 /* InfoPlist.strings in Resources */,
 				A153111818F45CFD008FF539 /* slenderman.png in Resources */,
 				C9AF591317F5678D00792F91 /* Main.storyboard in Resources */,
