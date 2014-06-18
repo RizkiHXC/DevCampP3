@@ -46,6 +46,12 @@
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
     lastMajor = @"";
+    
+    
+    NSURL *url2 = [[NSBundle mainBundle] URLForResource:@"background" withExtension:@"wav"];
+    AVAudioPlayer *audioPlayer2 = [[AVAudioPlayer alloc] initWithContentsOfURL:url2 error:nil];
+    [audioPlayer2 setNumberOfLoops:0];
+    [audioPlayer2 play];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region {

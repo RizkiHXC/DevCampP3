@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88B1B9BB1951ACA6002026DA /* background.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88B1B9BA1951ACA6002026DA /* background.wav */; };
 		A1562CAF19473A510015D689 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1562CAE19473A510015D689 /* Foundation.framework */; };
 		A1562CB119473A510015D689 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1562CB019473A510015D689 /* CoreGraphics.framework */; };
 		A1562CB319473A510015D689 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1562CB219473A510015D689 /* UIKit.framework */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		88B1B9BA1951ACA6002026DA /* background.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = background.wav; sourceTree = "<group>"; };
 		A1562CAB19473A510015D689 /* Slenderman-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slenderman-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1562CAE19473A510015D689 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A1562CB019473A510015D689 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -134,6 +136,7 @@
 		A1562CB519473A510015D689 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				88B1B9BA1951ACA6002026DA /* background.wav */,
 				A1562CB619473A510015D689 /* Slenderman-App-Info.plist */,
 				A1562CB719473A510015D689 /* InfoPlist.strings */,
 				A1562CBA19473A510015D689 /* main.m */,
@@ -238,6 +241,7 @@
 			files = (
 				A1562CC719473A520015D689 /* Images.xcassets in Resources */,
 				A1562CB919473A510015D689 /* InfoPlist.strings in Resources */,
+				88B1B9BB1951ACA6002026DA /* background.wav in Resources */,
 				A1562CC219473A520015D689 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,6 +468,7 @@
 				A1562CDF19473A530015D689 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A1562CE019473A530015D689 /* Build configuration list for PBXNativeTarget "Slenderman-AppTests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +477,7 @@
 				A1562CE219473A530015D689 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
