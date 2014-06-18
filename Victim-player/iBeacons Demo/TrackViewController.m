@@ -21,6 +21,8 @@
     BOOL shouldTimerFire;
     
     AVAudioPlayer *audioPlayer;
+    
+    NSMutableData *responseData;
 }
 
 @end
@@ -56,7 +58,6 @@
     
     //Timers
     timerInt = 0;
-    slenderTimer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(startSlender) userInfo:nil repeats:YES];
     
     //Audio
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"zombie" withExtension:@"wav"];
@@ -68,6 +69,13 @@
     [self.view addSubview:slenderView];
     [self.view addSubview:deadOverlay];
     [self.view addSubview:deadLabel];
+    
+    
+    
+    responseData = [NSMutableData data];
+    
+    
+    NSTimer *checkSlender = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(check) userInfo:nil repeats:YES];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region {
@@ -93,36 +101,59 @@
     
     beacon1 = [beacons objectAtIndex:0];
     
-    
-    // Check of dichtstbijzijnde bacon anders is dan laatste bacon
-    if([lastMajor isEqualToString:[NSString stringWithFormat:@"%@", beacon1.major]]) {
-        // Staat nog bij oude bacon
-        NSLog(@"Oude beacon");
-    } else {
-        // Nieuwe bacon dichtstbijzijnde
-        NSLog(@"Nieuwe beacon");
-        shouldTimerFire = YES;
-        [self resetSlender];
-        
-        lastMajor = [NSString stringWithFormat:@"%@", beacon1.major];
-    }
-
     if(beacon1.accuracy < 0.8) {
-        if([[NSString stringWithFormat:@"%@", beacon1.major] isEqualToString:@"16345"]) {
-//            [self.view setBackgroundColor:[UIColor purpleColor]];
-        } else if([[NSString stringWithFormat:@"%@", beacon1.major] isEqualToString:@"31754"]) {
-//            [self.view setBackgroundColor:[UIColor greenColor]];
-        } else if([[NSString stringWithFormat:@"%@", beacon1.major] isEqualToString:@"24196"]) {
-//            [self.view setBackgroundColor:[UIColor blueColor]];
-        } else {
-//            [self.view setBackgroundColor:[UIColor whiteColor]];
-        }
-    } else {
-//        [self.view setBackgroundColor:[UIColor whiteColor]];
+        NSString *postURL = [NSString stringWithFormat:@"http://www.hiddestatema.com/slenderman/post/?who=1&beacon=%@&distance=%f", beacon1.major, beacon1.accuracy ];
+        
+        NSURLRequest *request = [NSURLRequest requestWithURL:
+                                 [NSURL URLWithString:postURL]];
+        [[NSURLConnection alloc] initWithRequest:request delegate:nil];
     }
     
-    [self startSlender];
-  
+}
+
+- (void) check {
+    NSString *postURL = [NSString stringWithFormat:@"http://www.hiddestatema.com/slenderman/get/"];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:
+                             [NSURL URLWithString:postURL]];
+    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    responseData = [NSMutableData data];
+    [responseData appendData:data];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    NSLog(@"connectionDidFinishLoading");
+    NSLog(@"Succeeded! Received %d bytes of data",[responseData length]);
+    
+    // convert to JSON
+    NSError *myError = nil;
+    NSDictionary *res = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:&myError];
+    
+    /*// show all values
+    for(id key in res) {
+        
+        id value = [res objectForKey:key];
+        
+        NSString *keyAsString = (NSString *)key;
+        NSString *valueAsString = (NSString *)value;
+        
+        NSLog(@"key: %@", keyAsString);
+        NSLog(@"value: %@", valueAsString);
+    }
+    
+    // extract specific value...
+    NSArray *results = [res objectForKey:@"results"];
+    
+    for (NSDictionary *result in results) {
+        NSString *icon = [result objectForKey:@"icon"];
+        NSLog(@"icon: %@", icon);
+    }
+    */
+    
+    NSLog(@"%@", [[[res objectForKey:@"data"] objectForKey:@"player1"] objectForKey:@"death"]);
 }
 
 - (void) startSlender {
