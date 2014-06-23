@@ -85,6 +85,14 @@
     
     
     checkSlender = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(check) userInfo:nil repeats:YES];
+    
+    
+    
+    NSString *reserURL = [NSString stringWithFormat:@"http://www.hiddestatema.com/slenderman/reset/" ];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:
+                             [NSURL URLWithString:reserURL]];
+    [[NSURLConnection alloc] initWithRequest:request delegate:nil];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region {
