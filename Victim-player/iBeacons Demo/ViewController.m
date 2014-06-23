@@ -27,4 +27,5 @@
     // Dispose of any resources that can be recreated.
 }
 
+// NSLog(@"Hoi ik ben Stephan, en dit is een testedit");
 @end
