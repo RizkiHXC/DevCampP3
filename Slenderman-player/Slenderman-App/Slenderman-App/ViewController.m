@@ -13,6 +13,7 @@
     NSString *apiReq;
     
     UILabel *deadLabel;
+    UIImageView *slenderView;
     
     UIButton *killButton;
     
@@ -21,6 +22,16 @@
     BOOL shouldTimerFire;
     
     CLBeacon *beacon1;
+    
+    NSTimer *checkSlender;
+    NSTimer *timeoutKill;
+    
+    NSMutableData *responseData;
+    
+    UILabel *labelHitWarning;
+    
+    AVAudioPlayer *audioPlayer;
+    AVAudioPlayer *audioPlayer2;
 }
 
 @end
@@ -36,22 +47,44 @@
     [self initRegion];
     [self locationManager:self.locationManager didStartMonitoringForRegion:self.beaconRegion];
     
-    killButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 200, self.view.frame.size.width, 200)];
+    slenderView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"slenderman.png"]];
+    [slenderView setFrame:self.view.frame];
+    [slenderView setAlpha:.2];
+    [self.view addSubview:slenderView];
+    
+    killButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [killButton addTarget:self action:@selector(kill) forControlEvents:UIControlEventTouchUpInside];
     [killButton setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
-    [killButton setTitle:@"Kill" forState:UIControlStateNormal];
-    [killButton setBackgroundColor:[UIColor redColor]];
+    [killButton setTitle:@"KILL" forState:UIControlStateNormal];
+    [killButton.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:64]];
+    [killButton setBackgroundColor:[UIColor clearColor]];
     
     [self.view addSubview:killButton];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
     lastMajor = @"";
     
+    checkSlender = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(check) userInfo:nil repeats:YES];
     
-    NSURL *url2 = [[NSBundle mainBundle] URLForResource:@"background" withExtension:@"wav"];
-    AVAudioPlayer *audioPlayer2 = [[AVAudioPlayer alloc] initWithContentsOfURL:url2 error:nil];
-    [audioPlayer2 setNumberOfLoops:0];
-    [audioPlayer2 play];
+    responseData = [NSMutableData data];
+    
+    
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"background2" withExtension:@"wav"];
+    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    [audioPlayer setNumberOfLoops:0];
+    [audioPlayer play];
+    
+    
+    [self.view setBackgroundColor:[UIColor blackColor]];
+    
+    
+    labelHitWarning = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+    [labelHitWarning setText:@" "];
+    [labelHitWarning setFont:[UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:32]];
+    [labelHitWarning setTextColor:[UIColor whiteColor]];
+    [labelHitWarning setTextAlignment:NSTextAlignmentCenter];
+    
+    [self.view addSubview:labelHitWarning];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region {
@@ -90,19 +123,55 @@
         lastMajor = [NSString stringWithFormat:@"%@", beacon1.major];
     }
     
-    if(beacon1.accuracy < 0.8) {
-        if([[NSString stringWithFormat:@"%@", beacon1.major] isEqualToString:@"961"]) {
-            [self.view setBackgroundColor:[UIColor purpleColor]];
-        } else if([[NSString stringWithFormat:@"%@", beacon1.major] isEqualToString:@"54024"]) {
-            [self.view setBackgroundColor:[UIColor greenColor]];
-        } else if([[NSString stringWithFormat:@"%@", beacon1.major] isEqualToString:@"28369"]) {
-            [self.view setBackgroundColor:[UIColor blueColor]];
-        } else {
-            [self.view setBackgroundColor:[UIColor whiteColor]];
-        }
+//    if(beacon1.accuracy < 0.8) {
+//        if([[NSString stringWithFormat:@"%@", beacon1.major] isEqualToString:@"961"]) {
+//            [self.view setBackgroundColor:[UIColor purpleColor]];
+//        } else if([[NSString stringWithFormat:@"%@", beacon1.major] isEqualToString:@"54024"]) {
+//            [self.view setBackgroundColor:[UIColor greenColor]];
+//        } else if([[NSString stringWithFormat:@"%@", beacon1.major] isEqualToString:@"28369"]) {
+//            [self.view setBackgroundColor:[UIColor blueColor]];
+//        } else {
+//            [self.view setBackgroundColor:[UIColor whiteColor]];
+//        }
+//    } else {
+//        [self.view setBackgroundColor:[UIColor whiteColor]];
+//    }
+}
+
+- (void) check {
+    NSString *postURL = [NSString stringWithFormat:@"http://www.hiddestatema.com/slenderman/get/"];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:
+                             [NSURL URLWithString:postURL]];
+    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    responseData = [NSMutableData data];
+    [responseData appendData:data];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    NSLog(@"connectionDidFinishLoading");
+    NSLog(@"Succeeded! Received %d bytes of data",[responseData length]);
+    
+    // convert to JSON
+    NSError *myError = nil;
+    NSDictionary *res = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:&myError];
+    
+    NSString *warning = [NSString stringWithFormat:@"%@", [[[res objectForKey:@"data"] objectForKey:@"player1"] objectForKey:@"warning"]];
+    NSString *death = [NSString stringWithFormat:@"%@", [[[res objectForKey:@"data"] objectForKey:@"player1"] objectForKey:@"death"]];
+    
+    if(![warning isEqualToString:@"0"] && [death isEqualToString:@"0"]) {
+        [labelHitWarning setText:@"YOU HIT SOMEONE"];
+    
+    } else if(![death isEqualToString:@"0"]) {
+        [labelHitWarning setText:@"YOU KILLED SOMEONE"];
+    
     } else {
-        [self.view setBackgroundColor:[UIColor whiteColor]];
+        [labelHitWarning setText:@" "];
     }
+    
 }
 
 
@@ -115,10 +184,24 @@
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:postRequest cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
     
-    NSURLConnection *connection= [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    NSURLConnection *connection= [[NSURLConnection alloc] initWithRequest:request delegate:nil];
     
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[bodyData dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [self disableButton];
+    
+    timeoutKill = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(enableButton) userInfo:nil repeats:NO];
+}
+
+- (void) disableButton {
+    [killButton setTitle:@" " forState:UIControlStateNormal];
+    [killButton setEnabled:NO];
+}
+
+- (void) enableButton {
+    [killButton setTitle:@"KILL" forState:UIControlStateNormal];
+    [killButton setEnabled:YES];
 }
 
 

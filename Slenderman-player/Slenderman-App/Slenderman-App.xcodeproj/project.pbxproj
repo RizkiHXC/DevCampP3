@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		88B1B9BB1951ACA6002026DA /* background.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88B1B9BA1951ACA6002026DA /* background.wav */; };
+		88BB645E195892B300DB11F2 /* background.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88BB645D195892B300DB11F2 /* background.wav */; };
+		88BB6460195892D400DB11F2 /* background2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88BB645F195892D400DB11F2 /* background2.wav */; };
+		88BB64621958949000DB11F2 /* slenderman.png in Resources */ = {isa = PBXBuildFile; fileRef = 88BB64611958949000DB11F2 /* slenderman.png */; };
 		A1562CAF19473A510015D689 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1562CAE19473A510015D689 /* Foundation.framework */; };
 		A1562CB119473A510015D689 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1562CB019473A510015D689 /* CoreGraphics.framework */; };
 		A1562CB319473A510015D689 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1562CB219473A510015D689 /* UIKit.framework */; };
@@ -37,7 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		88B1B9BA1951ACA6002026DA /* background.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = background.wav; sourceTree = "<group>"; };
+		88BB645D195892B300DB11F2 /* background.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = background.wav; sourceTree = "<group>"; };
+		88BB645F195892D400DB11F2 /* background2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = background2.wav; sourceTree = "<group>"; };
+		88BB64611958949000DB11F2 /* slenderman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slenderman.png; sourceTree = "<group>"; };
 		A1562CAB19473A510015D689 /* Slenderman-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slenderman-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1562CAE19473A510015D689 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A1562CB019473A510015D689 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,6 +126,7 @@
 		A1562CB419473A510015D689 /* Slenderman-App */ = {
 			isa = PBXGroup;
 			children = (
+				88BB645F195892D400DB11F2 /* background2.wav */,
 				A1562CBD19473A510015D689 /* AppDelegate.h */,
 				A1562CBE19473A510015D689 /* AppDelegate.m */,
 				A1562CC019473A520015D689 /* Main.storyboard */,
@@ -136,7 +141,8 @@
 		A1562CB519473A510015D689 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				88B1B9BA1951ACA6002026DA /* background.wav */,
+				88BB64611958949000DB11F2 /* slenderman.png */,
+				88BB645D195892B300DB11F2 /* background.wav */,
 				A1562CB619473A510015D689 /* Slenderman-App-Info.plist */,
 				A1562CB719473A510015D689 /* InfoPlist.strings */,
 				A1562CBA19473A510015D689 /* main.m */,
@@ -242,9 +248,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88BB64621958949000DB11F2 /* slenderman.png in Resources */,
+				88BB6460195892D400DB11F2 /* background2.wav in Resources */,
 				A1562CC719473A520015D689 /* Images.xcassets in Resources */,
 				A1562CB919473A510015D689 /* InfoPlist.strings in Resources */,
-				88B1B9BB1951ACA6002026DA /* background.wav in Resources */,
+				88BB645E195892B300DB11F2 /* background.wav in Resources */,
 				A1562CC219473A520015D689 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

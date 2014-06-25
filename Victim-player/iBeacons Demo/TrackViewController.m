@@ -44,9 +44,10 @@
     [self.view setBackgroundColor:[UIColor blackColor]];
     
     deadLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 200, self.view.frame.size.width, 100)];
-    [deadLabel setText:@"YOU DIED YOU NOOB"];
+    [deadLabel setText:@"YOU DIED"];
     [deadLabel setTextAlignment:NSTextAlignmentCenter];
-    [deadLabel setFont:[UIFont fontWithName:@"Helvetica" size:20]];
+    [deadLabel setTextColor:[UIColor whiteColor]];
+    [deadLabel setFont:[UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:48]];
     [deadLabel setAlpha:0];
     
     
@@ -56,7 +57,7 @@
     [slenderView setAlpha:0];
     
     deadOverlay = [[UIView alloc] initWithFrame:self.view.frame];
-    [deadOverlay setBackgroundColor:[UIColor redColor]];
+    [deadOverlay setBackgroundColor:[UIColor clearColor]];
     [deadOverlay setAlpha:0];
     
     //Timers
@@ -84,7 +85,7 @@
     responseData = [NSMutableData data];
     
     
-    checkSlender = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(check) userInfo:nil repeats:YES];
+    checkSlender = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(check) userInfo:nil repeats:YES];
     
     
     
@@ -118,13 +119,14 @@
     
     beacon1 = [beacons objectAtIndex:0];
     
-    if(beacon1.accuracy < 0.8) {
-        NSString *postURL = [NSString stringWithFormat:@"http://www.hiddestatema.com/slenderman/post/?who=1&beacon=%@&distance=%f", beacon1.major, beacon1.accuracy ];
-        
-        NSURLRequest *request = [NSURLRequest requestWithURL:
-                                 [NSURL URLWithString:postURL]];
-        [[NSURLConnection alloc] initWithRequest:request delegate:nil];
-    }
+    NSString *postURL = [NSString stringWithFormat:@"http://www.hiddestatema.com/slenderman/post/?who=1&beacon=%@&distance=%f", beacon1.major, beacon1.accuracy ];
+    
+    NSLog(@"%@", postURL);
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:
+                             [NSURL URLWithString:postURL]];
+    [[NSURLConnection alloc] initWithRequest:request delegate:nil];
+
     
 }
 
@@ -171,21 +173,30 @@
      */
     
     NSString *warning = [NSString stringWithFormat:@"%@", [[[res objectForKey:@"data"] objectForKey:@"player1"] objectForKey:@"warning"]];
-    if([warning isEqualToString:@"0"]) {
-        self.view.backgroundColor = [UIColor blackColor];
-    } else {
-        self.view.backgroundColor = [UIColor redColor];
-        [self warning];
-    }
-    
-    
-    
     NSString *death = [NSString stringWithFormat:@"%@", [[[res objectForKey:@"data"] objectForKey:@"player1"] objectForKey:@"death"]];
-    if([death isEqualToString:@"0"]) {
-        self.view.backgroundColor = [UIColor blackColor];
-    } else {
-        self.view.backgroundColor = [UIColor redColor];
+//    
+//    if([warning isEqualToString:@"0"]) {
+//        self.view.backgroundColor = [UIColor blackColor];
+//    } else {
+//        self.view.backgroundColor = [UIColor redColor];
+//        [self warning];
+//    }
+//    if([death isEqualToString:@"0"]) {
+//        self.view.backgroundColor = [UIColor blackColor];
+//    } else {
+//        self.view.backgroundColor = [UIColor redColor];
+//        [self death];
+//    }
+    
+    
+    if(![warning isEqualToString:@"0"] && [death isEqualToString:@"0"]) {
+        [self warning];
+        
+    } else if(![death isEqualToString:@"0"]) {
         [self death];
+        
+    } else {
+        [self reset];
     }
 }
 
@@ -206,6 +217,16 @@
     [audioPlayer stop];
     
     [checkSlender invalidate];
+}
+
+- (void) reset {
+    [audioPlayer stop];
+    
+    [UIView animateWithDuration:1
+                     animations:^{
+                         slenderView.alpha = 0;
+                     }
+                     completion:nil];
 }
 
 - (void) startSlender {
